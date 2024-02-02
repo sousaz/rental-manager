@@ -2,7 +2,7 @@
 
 export interface Rent{
   _id: string
-  date: Date
+  date: string
   street: string
   number: number
   complement: string

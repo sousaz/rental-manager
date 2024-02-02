@@ -24,8 +24,8 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class RentComponent {
   data: Rent[] = [
-    { _id: "0", date: new Date("12/01/2024"), street: "rua João", number: 12, complement: "apartamento", renant: "joão", value: 700.90, paid: true },
-    { _id: "1", date: new Date("12/02/2024"), street: "rua maria", number: 21, complement: "casa", renant: "maria", value: 1000.90, paid: false },
+    { _id: "0", date: this.formartDate(new Date("12/01/2024").toLocaleDateString("pt-BR")), street: "rua João", number: 12, complement: "apartamento", renant: "joão", value: 700.90, paid: true },
+    { _id: "1", date: this.formartDate(new Date("12/02/2024").toLocaleDateString("pt-BR")), street: "rua maria", number: 21, complement: "casa", renant: "maria", value: 1000.90, paid: false },
   ]
   constructor(){
     registerLocaleData(localePT)
@@ -37,5 +37,13 @@ export class RentComponent {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  formartDate(date: string): string{
+    const dateArr = date.split("/")
+    const temp = dateArr[0]
+    dateArr[0] = dateArr[1]
+    dateArr[1] = temp
+    return dateArr.join("/")
   }
 }
