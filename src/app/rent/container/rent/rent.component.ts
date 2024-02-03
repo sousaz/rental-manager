@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { Rent } from '../model/Rent';
+import { Rent } from '../../model/Rent';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
 import { MatIconModule } from '@angular/material/icon';
